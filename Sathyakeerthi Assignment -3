@@ -1,0 +1,21 @@
+SoftwareSerial mySerial(9, 10);
+#define trigPin 12
+#define echoPin 13
+void setup()
+{
+mySerial.begin(9600); // Setting the baud rate of GSM Module
+Serial.begin (9600);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+delay(100);
+}
+void loop()
+{
+long duration, distance;
+int max = 80; // Let consider as Height of the Garbage Bin is = 80 cm.
+float diff, perc;
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
