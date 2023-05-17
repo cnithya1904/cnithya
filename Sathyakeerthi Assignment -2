@@ -1,0 +1,18 @@
+SENSING
+#define trigPin 12
+#define echoPin 13
+void setup() 
+{
+Serial.begin (9600);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+}
+void loop() 
+{
+long duration, distance;
+int max = 80; // Let consider as Height of the Garbage Bin is = 80 cm.
+float diff, perc;
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
